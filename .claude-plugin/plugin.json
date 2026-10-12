@@ -1,0 +1,6 @@
+{
+  "name": "prompt-templates",
+  "version": "0.1.0",
+  "description": "Insert prompt templates with number-key buttons above the prompt",
+  "types": "./types/index.d.ts"
+}
