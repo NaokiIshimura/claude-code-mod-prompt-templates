@@ -20,10 +20,12 @@ Claude Code の入力欄のすぐ上にボタンを並べ、数字キーでプ�
 
 ### 2. Mod を入手する
 
-このリポジトリを好きな場所に clone（またはダウンロード）します。以下の例では `~/cc-mods-prompts` に置きます。
+このリポジトリを好きな場所に clone（またはダウンロード）し、フォルダに移動して絶対パスを確認します。以下の手順ではそのパスを `/path/to/claude-code-mod-prompt-templates` と書いているので、`pwd` の出力に置き換えてください。
 
 ```sh
-git clone https://github.com/NaokiIshimura/claude-code-mod-prompt-templates.git ~/cc-mods-prompts
+git clone https://github.com/NaokiIshimura/claude-code-mod-prompt-templates.git
+cd claude-code-mod-prompt-templates
+pwd
 ```
 
 ### 3. Mod を読み込む
@@ -35,7 +37,7 @@ Mod はフォルダから読み込みます。次のどちらかを選んでく�
 起動時にフォルダを指定します。手元の設定を何も変えないので、試すときはこれが手軽です。
 
 ```sh
-claude --plugin-dir ~/cc-mods-prompts
+claude --plugin-dir /path/to/claude-code-mod-prompt-templates
 ```
 
 #### 方法 B: いつも使う
@@ -45,7 +47,7 @@ claude --plugin-dir ~/cc-mods-prompts
 ```json
 {
   "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "/Users/you/cc-mods-prompts"
+    "CLAUDE_CODE_PLUGIN_DIRS": "/path/to/claude-code-mod-prompt-templates"
   }
 }
 ```
@@ -60,7 +62,7 @@ claude --plugin-dir ~/cc-mods-prompts
 
 ```sh
 mkdir -p ~/.claude/prompt-templates
-cp ~/cc-mods-prompts/examples/prompt-templates/ja/*.md ~/.claude/prompt-templates/
+cp /path/to/claude-code-mod-prompt-templates/examples/prompt-templates/ja/*.md ~/.claude/prompt-templates/
 ```
 
 ### 5. 動作を確認する
