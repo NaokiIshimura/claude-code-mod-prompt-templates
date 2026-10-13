@@ -20,10 +20,12 @@ Tested with Claude Code 2.1.287. The mod API is in early access and may change i
 
 ### 2. Get the mod
 
-Clone (or download) this repository anywhere you like. The examples below use `~/cc-mods-prompts`.
+Clone (or download) this repository anywhere you like, then move into the folder and print its absolute path. The steps below write that path as `/path/to/claude-code-mod-prompt-templates`; replace it with the output of `pwd`.
 
 ```sh
-git clone https://github.com/NaokiIshimura/claude-code-mod-prompt-templates.git ~/cc-mods-prompts
+git clone https://github.com/NaokiIshimura/claude-code-mod-prompt-templates.git
+cd claude-code-mod-prompt-templates
+pwd
 ```
 
 ### 3. Load the mod
@@ -35,7 +37,7 @@ A mod is loaded from its folder. Pick one of the following.
 Pass the folder when you start Claude Code. Nothing is changed on your machine, so this is the easiest way to try it.
 
 ```sh
-claude --plugin-dir ~/cc-mods-prompts
+claude --plugin-dir /path/to/claude-code-mod-prompt-templates
 ```
 
 #### Option B: for every session
@@ -45,7 +47,7 @@ Add the folder to `env` in `~/.claude/settings.json`, then restart Claude Code. 
 ```json
 {
   "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "/Users/you/cc-mods-prompts"
+    "CLAUDE_CODE_PLUGIN_DIRS": "/path/to/claude-code-mod-prompt-templates"
   }
 }
 ```
@@ -60,7 +62,7 @@ Put your templates in `~/.claude/prompt-templates/` (see [Templates](#templates)
 
 ```sh
 mkdir -p ~/.claude/prompt-templates
-cp ~/cc-mods-prompts/examples/prompt-templates/en/*.md ~/.claude/prompt-templates/
+cp /path/to/claude-code-mod-prompt-templates/examples/prompt-templates/en/*.md ~/.claude/prompt-templates/
 ```
 
 ### 5. Check that it works
